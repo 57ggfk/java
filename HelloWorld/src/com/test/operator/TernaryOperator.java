@@ -58,4 +58,5 @@ public class TernaryOperator {
         int b = a > 20?300:100;
         System.out.println(b);
     }
+
 }
