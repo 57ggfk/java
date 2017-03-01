@@ -8,7 +8,7 @@ public class Demo4_Thread {
     public static void main(String[] args) {
         new Thread() {                                      //1,继承Thread类
             @Override
-            public void run() {                             //2,重写run方法
+            public void run() {                                  //2,重写run方法
                 for (int i = 0; i < 10000; i++) {           //3,要执行的代码写在run方法中
                     System.out.println("aaaa----aaaa");
                 }
