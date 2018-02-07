@@ -7,19 +7,34 @@ package com.test.ab;
 public class AdvancedTest extends BaseTest {
     public static void main(String[] args) {
         Object obj = new AdvancedTest();
-        System.out.println(checkTest(new String("")));
+        System.out.println(checkTest(obj));
+
+        BaseTest obj2 = new AdvancedTest();
+        System.out.println(checkTest(obj2));
+
+        Runnable run = (Runnable)obj2;
+        System.out.println(checkTest(run));
+        // 是谁的实例，看具体对象能够强转成谁
     }
     public static boolean checkTest(Object obj) {
-        if (obj instanceof BaseTest)
-            //return true;
-        System.out.println("not a BaseTest");
-        if (obj instanceof Runnable)
-            //return true;
-        System.out.println("not Runnable");
+        System.out.println("current class: " + obj.getClass().getName());
+        if (obj instanceof BaseTest) {
+            System.out.println("a BaseTest");
+        } else {
+            System.out.println("not a BaseTest");
+        }
 
-        if (obj instanceof AdvancedTest)
-            //return true;
-        System.out.println("not AdvancedTest");
-        return false;
+        if (obj instanceof Runnable) {
+            System.out.println("a Runnable");
+        } else {
+            System.out.println("not a Runnable");
+        }
+
+        if (obj instanceof AdvancedTest) {
+            System.out.println("a AdvancedTest");
+        } else {
+            System.out.println("not a AdvancedTest");
+        }
+        return true;
     }
 }
